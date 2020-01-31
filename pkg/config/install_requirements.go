@@ -238,6 +238,10 @@ type IngressConfig struct {
 	TLS TLSConfig `json:"tls"`
 	// DomainIssuerURL contains a URL used to retrieve a Domain
 	DomainIssuerURL string `json:"domainIssuerURL,omitempty"`
+	// BindExternalAddress allows the external IP of the LoadBalancer service to be manually specified
+	// This is useful for on-prem kubernetes installs in particular, where there may not be an external
+	// service to come along and allocate an IP to listen on.
+	BindExternalAddress string `json:"bindExternalAddress,omitempty"`
 }
 
 // TLSConfig contains TLS specific requirements
